@@ -1,0 +1,22 @@
+{
+  "name": "myblog",
+  "version": "0.0.1",
+  "description": "A simple and nice blog",
+  "main": "index.js",
+  "authors": {
+    "name": "Manan Chawla",
+    "email": "mananapeejay@gmail.com"
+  },
+  "repository": "/myblog",
+  "scripts": {
+    "dev": "vuepress dev src",
+    "build": "vuepress build src"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "vuepress": "^1.5.3",
+    "vuepress-plugin-smooth-scroll": "0.0.10",
+    "vuepress-plugin-social-share": "^1.0.0"
+  },
+  "dependencies": {}
+}
