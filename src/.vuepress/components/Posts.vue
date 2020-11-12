@@ -2,7 +2,7 @@
 <div class="post-container">
     <router-link v-for="page in pages" :to="page.path">
         <div class="post-card">
-            <img class="article-image" :src="'/images/' + page.frontmatter.image" />
+            <img class="article-image" :src="page.frontmatter.image" />
             <div class="page-detail">
                 <div class="page-title">{{ page.title }}</div>
                 <div class="page-description">{{ page.frontmatter.description }}</div>

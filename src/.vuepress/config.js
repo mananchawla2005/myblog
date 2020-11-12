@@ -42,7 +42,8 @@ module.exports = {
     ],
     sidebar: [
       '/blog/intro-to-vuepress'
-    ]
+    ],
+    domain: 'https://blog.mananchawla.ml'
   },
 
   /**
