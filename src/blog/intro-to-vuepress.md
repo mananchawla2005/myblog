@@ -4,6 +4,8 @@ description: Basic intro to vuepress
 author: Manan Chawla
 type: article
 image: Intro_to_Vuepress/logo.png
+sidebarDepth: 2
+tags: vuepress vue blog
 ---
 ![](/images/Intro_to_Vuepress/logo.png)
 # Into to Vuepress
@@ -110,6 +112,6 @@ It is very easy to deploy existing vuepress project. Just run
 ```js 
 npm run build 
 ``` 
-and deploy it on any static website hosting paas like github pages netlify vercel gitlab etc. 
+and deploy it on any static website hosting paas like github pages netlify vercel gitlab etc. Thankyou.
 
 <social-share :networks="['facebook', 'twitter']"/>

@@ -16,7 +16,12 @@ module.exports = {
   head: [
     ['meta', { name: 'theme-color', content: '#3eaf7c' }],
     ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
-    ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }]
+    ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }],
+    ['link', { rel: "apple-touch-icon", sizes: "180x180", href: "/favicon/apple-touch-icon.png"}],
+    ['link', { rel: "icon", type: "image/png", sizes: "32x32", href: "/favicon/favicon-32x32.png"}],
+    ['link', { rel: "icon", type: "image/png", sizes: "16x16", href: "/favicon/favicon-16x16.png"}],
+    ['link', { rel: "manifest", href: "/favicon/site.webmanifest"}],
+    ['link', { rel: "shortcut icon", href: "/favicon/favicon.ico"}],
   ],
 
   /**
@@ -29,13 +34,14 @@ module.exports = {
     editLinks: false,
     docsDir: '',
     editLinkText: '',
-    lastUpdated: false,
+    lastUpdated: 'Last Updated',
+    sidebarDepth: 2,
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Blog', link: '/blog/' }
     ],
     sidebar: [
-      '/blog/1_Vuepress'
+      '/blog/intro-to-vuepress'
     ]
   },
 
@@ -49,7 +55,25 @@ module.exports = {
     {
        networks: ['twitter', 'facebook', 'reddit', 'telegram']
     },
-    'vuepress-plugin-smooth-scroll'
+    'vuepress-plugin-smooth-scroll',
+    'seo',
+     {
+      siteTitle: (_, $site) => $site.title,
+      title: $page => $page.title,
+      description: $page => $page.frontmatter.description,
+      author: (_, $site) => $site.themeConfig.author,
+      tags: $page => $page.frontmatter.tags,
+      twitterCard: _ => 'summary_large_image',
+      type: $page => ['articles', 'posts', 'blog'].some(folder => $page.regularPath.startsWith('/' + folder)) ? 'article' : 'website',
+      url: (_, $site, path) => ($site.themeConfig.domain || '') + path,
+      image: ($page, $site) => $page.frontmatter.image && (($site.themeConfig.domain && !$page.frontmatter.image.startsWith('http') || '') + $page.frontmatter.image),
+      publishedAt: $page => $page.frontmatter.date && new Date($page.frontmatter.date),
+      modifiedAt: $page => $page.lastUpdated && new Date($page.lastUpdated),
+    },
+    'sitemap',
+    {
+      hostname: 'localhost:8080'
+    },
   ],
   dest: 'public'
 }
