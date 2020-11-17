@@ -1,6 +1,6 @@
 ---
 title: Python Chat Application
-description: Basic intro to vuepress
+description: Build a client server based chat application in python.
 author: Manan Chawla
 type: article
 image: /images/Python_Chat_App_Part_1/logo.webp
