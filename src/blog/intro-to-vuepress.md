@@ -3,7 +3,7 @@ title: Getting Started with vuepress
 description: Basic intro to vuepress
 author: Manan Chawla
 type: article
-image: /images/Intro_to_Vuepress/logo.png
+image: /images/Intro_to_Vuepress/logo.webp
 sidebarDepth: 2
 tags: vuepress vue blog
 ---
