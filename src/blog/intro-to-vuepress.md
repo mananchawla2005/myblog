@@ -4,8 +4,7 @@ description: Basic intro to vuepress
 author: Manan Chawla
 type: article
 image: /images/Intro_to_Vuepress/logo.webp
-sidebarDepth: 2
-tags: vuepress vue blog
+pos: 0
 ---
 ![img](/images/Intro_to_Vuepress/logo.webp)
 # Into to Vuepress

@@ -33,16 +33,17 @@ module.exports = {
   themeConfig: {
     repo: '',
     editLinks: false,
+    search: true,
     docsDir: '',
     editLinkText: '',
     lastUpdated: 'Last Updated',
-    sidebarDepth: 2,
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Blog', link: '/blog/' }
     ],
     sidebar: [
-      '/blog/intro-to-vuepress'
+      '/blog/intro-to-vuepress',
+      '/blog/chat-app-python-part-1'
     ],
     domain: 'https://blog.mananchawla.ml'
   },

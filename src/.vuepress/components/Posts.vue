@@ -26,6 +26,9 @@ export default {
                 this.pages.push(page)
             }
         })
+        this.pages.sort((a, b)=>{
+            return b.frontmatter.pos - a.frontmatter.pos
+        })
     }
 }
 </script>
