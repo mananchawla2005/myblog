@@ -7,7 +7,7 @@ image: /images/Intro_to_Vuepress/logo.png
 sidebarDepth: 2
 tags: vuepress vue blog
 ---
-![](/images/Intro_to_Vuepress/logo.png)
+![img](/images/Intro_to_Vuepress/logo.webp)
 # Into to Vuepress
 
 VuePress is an amazing and very powerful static site generator. The blog you are seeing is made by vuepres itself.
@@ -60,7 +60,7 @@ npm install
 </code-group>
 
 
-After installing the required dependencies, run the dev script to start the server at [https://localhost:8080](localhost:8080)
+After installing the required dependencies, run the dev script to start the server at [http://localhost:8080](http://localhost:8080)
 
 <code-group style="margin-top:10px;">
 <code-block title="YARN">
@@ -80,7 +80,7 @@ npm run dev
 
 You will see a index.md file in the docs folder. This is your main file displayed on your main page. It is displayed on your front page. It takes the information from the frontmatter inside it. A sample index file is given below.
 
-![](/images/Intro_to_Vuepress/sample_index.png)
+![img](/images/Intro_to_Vuepress/sample_index.webp)
 
 ## Plugins and Themes
 

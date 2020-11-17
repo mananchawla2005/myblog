@@ -14,6 +14,7 @@ module.exports = {
    * ref：https://v1.vuepress.vuejs.org/config/#head
    */
   head: [
+    ['meta', { name: 'viewport', content: 'width=device-width, initial-scale=1' }],
     ['meta', { name: 'theme-color', content: '#3eaf7c' }],
     ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
     ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }],
@@ -51,12 +52,12 @@ module.exports = {
    */
   plugins: [
     '@vuepress/plugin-back-to-top',
-    '@vuepress/plugin-medium-zoom',
     'social-share',
     {
        networks: ['twitter', 'facebook', 'reddit', 'telegram']
     },
     'vuepress-plugin-smooth-scroll',
+    'img-lazy',
     'seo',
      {
       siteTitle: (_, $site) => $site.title,
@@ -73,7 +74,7 @@ module.exports = {
     },
     'sitemap',
     {
-      hostname: 'localhost:8080'
+      hostname: 'https://blog.mananchawla.ml'
     },
   ],
   dest: 'public'
