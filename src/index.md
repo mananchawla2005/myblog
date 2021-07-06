@@ -1,7 +1,7 @@
 ---
 home: true
 heroText: Hi, I am Manan. Welcome to my blog!
-tagline: I am 15 years old student who loves to write and talk about code!
+tagline: I am 15 years old student who loves to write and talk about code and hack( sometimes xD ) !
 actionText: See my work →
 actionLink: /blog/
 features:

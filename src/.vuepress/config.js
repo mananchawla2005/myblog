@@ -43,7 +43,8 @@ module.exports = {
     ],
     sidebar: [
       '/blog/intro-to-vuepress',
-      '/blog/chat-app-python-part-1'
+      '/blog/chat-app-python-part-1',
+      '/blog/tryhackme-pre-security'
     ],
     domain: 'https://blog.mananchawla.ml'
   },
