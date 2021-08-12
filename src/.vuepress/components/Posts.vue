@@ -58,7 +58,7 @@ export default {
 }
 
 .article-image {
-    height: 100%;
+    max-height:100vh;
 }
 
 .page-detail {
