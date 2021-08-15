@@ -13,4 +13,4 @@
 - #### Change the directory to myblog with `cd myblog`.
 - #### `npm install` to install all the dependencies including vuepress.
 - #### Start the dev server with `npm run dev`.
-## Happy Hacking!
+## Happy Hacking!!
