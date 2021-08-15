@@ -4,7 +4,7 @@ description: The Pre-Security learning path is a beginner friendly and fun way t
 author: Manan Chawla
 type: article
 image: /images/Tryhackme_Pre_Sec/logo.webp
-pos: 0
+pos: 2
 ---
 ![img](/images/Tryhackme_Pre_Sec/logo.webp)
 # About Tryhackme

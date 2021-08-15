@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Python Chat Application | Dev Blog</title>
+    <meta name="generator" content="VuePress 1.7.1">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+    <link rel="shortcut icon" href="/favicon/favicon.ico">
+    <meta name="description" content="Build a client server based chat application in python.">
+    <meta property="article:modified_time" content="2021-08-15T10:06:09.000Z">
+    <meta property="og:site_name" content="Dev Blog">
+    <meta property="og:title" content="Python Chat Application">
+    <meta property="og:description" content="Build a client server based chat application in python.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://blog.mananchawla.ml/blog/chat-app-python-part-1.html">
+    <meta property="og:image" content="https://blog.mananchawla.ml/images/Python_Chat_App_Part_1/logo.webp">
+    <meta name="twitter:title" content="Python Chat Application">
+    <meta name="twitter:description" content="Build a client server based chat application in python.">
+    <meta name="twitter:url" content="https://blog.mananchawla.ml/blog/chat-app-python-part-1.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://blog.mananchawla.ml/images/Python_Chat_App_Part_1/logo.webp">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#3eaf7c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    
+    <link rel="preload" href="/assets/css/0.styles.940c83bc.css" as="style"><link rel="preload" href="/assets/js/app.99a4af3f.js" as="script"><link rel="preload" href="/assets/js/2.03360062.js" as="script"><link rel="preload" href="/assets/js/9.bff3b7b4.js" as="script"><link rel="prefetch" href="/assets/js/10.6637705a.js"><link rel="prefetch" href="/assets/js/11.54125dd9.js"><link rel="prefetch" href="/assets/js/12.6353a56b.js"><link rel="prefetch" href="/assets/js/3.781fd95d.js"><link rel="prefetch" href="/assets/js/4.c3e90a14.js"><link rel="prefetch" href="/assets/js/5.fd263b87.js"><link rel="prefetch" href="/assets/js/6.ae4875d0.js"><link rel="prefetch" href="/assets/js/7.6847cc34.js"><link rel="prefetch" href="/assets/js/8.69709ab6.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.940c83bc.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Dev Blog</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/blog/" class="nav-link router-link-active">
+  Blog
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/blog/" class="nav-link router-link-active">
+  Blog
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/blog/intro-to-vuepress.html" class="sidebar-link">Getting Started with vuepress</a></li><li><a href="/blog/chat-app-python-part-1.html" aria-current="page" class="active sidebar-link">Python Chat Application</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/chat-app-python-part-1.html#environment-setup" class="sidebar-link">Environment Setup</a></li><li class="sidebar-sub-header"><a href="/blog/chat-app-python-part-1.html#coding-the-server" class="sidebar-link">Coding the Server</a></li><li class="sidebar-sub-header"><a href="/blog/chat-app-python-part-1.html#coding-the-client" class="sidebar-link">Coding the Client</a></li><li class="sidebar-sub-header"><a href="/blog/chat-app-python-part-1.html#how-does-it-work" class="sidebar-link">How does it work?</a></li><li class="sidebar-sub-header"><a href="/blog/chat-app-python-part-1.html#conclusion-and-further-learning" class="sidebar-link">Conclusion and further learning</a></li></ul></li><li><a href="/blog/tryhackme-pre-security.html" class="sidebar-link">Lucky Titles - Tryhackme Pre Security Path</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><p><img alt="img" data-src="/images/Python_Chat_App_Part_1/logo.webp" loading="lazy" class="lazy"></p> <h1 id="python-chat-application"><a href="#python-chat-application" class="header-anchor">#</a> Python Chat Application</h1> <p>Recently I was informed by my school teacher to make a project in python. I was wondering what to make and what could be better than a fully customised chat application. I wanted to do this project in nodejs but never got time to do so. So I thought that let just make it python instead. After all python is cool for these kind of projects. So lets build a chat application together.</p> <h2 id="environment-setup"><a href="#environment-setup" class="header-anchor">#</a> Environment Setup</h2> <h3 id="ide"><a href="#ide" class="header-anchor">#</a> IDE</h3> <ul><li>My choice for ide ( and most people's too ) is none other than <strong>VSCODE</strong>.</li></ul> <h3 id="python"><a href="#python" class="header-anchor">#</a> Python</h3> <ul><li>For this project, I am using the latest <strong>python 3.9</strong> with virtual environment with venv.</li></ul> <h3 id="requirements"><a href="#requirements" class="header-anchor">#</a> Requirements</h3> <ul><li>Just install <strong>socket</strong> library with:</li></ul> <div class="language-bash extra-class"><pre class="language-bash"><code>pip <span class="token function">install</span> socket
+</code></pre></div><h1 id="getting-started"><a href="#getting-started" class="header-anchor">#</a> Getting Started</h1> <p>For this project, we will be needing two files namely <code>client.py</code> and <code>server.py</code>.</p> <h2 id="coding-the-server"><a href="#coding-the-server" class="header-anchor">#</a> Coding the Server</h2> <ul><li>Import the necessary packages required. ( These packages will also be same for client )</li></ul> <div class="language-py extra-class"><pre class="language-py"><code><span class="token keyword">import</span> threading
+<span class="token keyword">import</span> socket
+</code></pre></div><ul><li>Now define the ip of your local machine as well as port for listening to the websocket connections for clients to connect on. In my case it wil be</li></ul> <div class="language-py extra-class"><pre class="language-py"><code>host <span class="token operator">=</span> <span class="token string">'192.168.0.45'</span>
+port <span class="token operator">=</span> <span class="token number">55555</span>
+</code></pre></div><ul><li>Initialise the socket connection with</li></ul> <div class="language-py extra-class"><pre class="language-py"><code>server <span class="token operator">=</span> socket<span class="token punctuation">.</span>socket<span class="token punctuation">(</span>socket<span class="token punctuation">.</span>AF_INET<span class="token punctuation">,</span> socket<span class="token punctuation">.</span>SOCK_STREAM<span class="token punctuation">)</span>
+</code></pre></div><p><strong>*Note: Here AF_INET refers to using ipv4 as our protocol. and SOCK_STREAM refers to using TCP connection instead of UDP (SOCK_DGRAM)</strong></p> <p><img alt="img" data-src="/images/Python_Chat_App_Part_1/tcp.webp" loading="lazy" class="lazy"></p> <ul><li>Bind the server to the specified host and port and start listening for incomming connections.</li></ul> <div class="language-py extra-class"><pre class="language-py"><code>server<span class="token punctuation">.</span>bind<span class="token punctuation">(</span><span class="token punctuation">(</span>host<span class="token punctuation">,</span> port<span class="token punctuation">)</span><span class="token punctuation">)</span>
+server<span class="token punctuation">.</span>listen<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div><ul><li>Now let us declare all the required variables.</li></ul> <div class="language-py extra-class"><pre class="language-py"><code>clients<span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+nicknames<span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+</code></pre></div><ul><li>Now write our first broadcast function to send the message coming from one client to all of the connected clients.</li></ul> <div class="language-py extra-class"><pre class="language-py"><code><span class="token keyword">def</span> <span class="token function">broadcast</span><span class="token punctuation">(</span>msg<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">for</span> client <span class="token keyword">in</span> clients<span class="token punctuation">:</span>
+        client<span class="token punctuation">.</span>send<span class="token punctuation">(</span>msg<span class="token punctuation">)</span>
+</code></pre></div><ul><li>Now lets write our main function for handling the clients and their messages.</li></ul> <div class="language-py extra-class"><pre class="language-py"><code><span class="token keyword">def</span> <span class="token function">handle</span><span class="token punctuation">(</span>client<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+        <span class="token keyword">try</span><span class="token punctuation">:</span>
+            message <span class="token operator">=</span> client<span class="token punctuation">.</span>recv<span class="token punctuation">(</span><span class="token number">1024</span><span class="token punctuation">)</span>
+            <span class="token comment"># Recive the message from the client and broadcast it to all clients.</span>
+            broadcast<span class="token punctuation">(</span>message<span class="token punctuation">)</span>
+        <span class="token keyword">except</span><span class="token punctuation">:</span>
+            <span class="token comment"># If client disconnects, then close the connection.</span>
+            index <span class="token operator">=</span> clients<span class="token punctuation">.</span>index<span class="token punctuation">(</span>client<span class="token punctuation">)</span>
+            clients<span class="token punctuation">.</span>remove<span class="token punctuation">(</span>client<span class="token punctuation">)</span>
+            client<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+            nickname <span class="token operator">=</span> nicknames<span class="token punctuation">[</span>index<span class="token punctuation">]</span>
+            broadcast<span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f'</span><span class="token interpolation"><span class="token punctuation">{</span>nickname<span class="token punctuation">}</span></span><span class="token string"> left the chat'</span></span><span class="token punctuation">.</span>encode<span class="token punctuation">(</span><span class="token string">'ascii'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+            nicknames<span class="token punctuation">.</span>remove<span class="token punctuation">(</span>nickname<span class="token punctuation">)</span>
+            <span class="token keyword">break</span>
+</code></pre></div><ul><li>Above function handles the client messages and broadcasts them whenever recieves message from client. Now lets write function for accepting the incomming connection and saving the nickname in the list data structure.</li></ul> <div class="language-py extra-class"><pre class="language-py"><code><span class="token keyword">def</span> <span class="token function">receive</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+        client<span class="token punctuation">,</span> address <span class="token operator">=</span> server<span class="token punctuation">.</span>accept<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f'Connected with </span><span class="token interpolation"><span class="token punctuation">{</span><span class="token builtin">str</span><span class="token punctuation">(</span>address<span class="token punctuation">)</span><span class="token punctuation">}</span></span><span class="token string">'</span></span><span class="token punctuation">)</span>
+
+        client<span class="token punctuation">.</span>send<span class="token punctuation">(</span><span class="token string">'NICK'</span><span class="token punctuation">.</span>encode<span class="token punctuation">(</span><span class="token string">'ascii'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        nickname <span class="token operator">=</span> client<span class="token punctuation">.</span>recv<span class="token punctuation">(</span><span class="token number">1024</span><span class="token punctuation">)</span><span class="token punctuation">.</span>decode<span class="token punctuation">(</span><span class="token string">'ascii'</span><span class="token punctuation">)</span>
+        nicknames<span class="token punctuation">.</span>append<span class="token punctuation">(</span>nickname<span class="token punctuation">)</span>
+        clients<span class="token punctuation">.</span>append<span class="token punctuation">(</span>client<span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f'Nickname of the client is: </span><span class="token interpolation"><span class="token punctuation">{</span>nickname<span class="token punctuation">}</span></span><span class="token string">!'</span></span><span class="token punctuation">)</span>
+        broadcast<span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f'</span><span class="token interpolation"><span class="token punctuation">{</span>nickname<span class="token punctuation">}</span></span><span class="token string"> joined the chat'</span></span><span class="token punctuation">.</span>encode<span class="token punctuation">(</span><span class="token string">'ascii'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        client<span class="token punctuation">.</span>send<span class="token punctuation">(</span><span class="token string">'Connected to the server'</span><span class="token punctuation">.</span>encode<span class="token punctuation">(</span><span class="token string">'ascii'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+        thread <span class="token operator">=</span> threading<span class="token punctuation">.</span>Thread<span class="token punctuation">(</span>target<span class="token operator">=</span>handle<span class="token punctuation">,</span> args<span class="token operator">=</span><span class="token punctuation">(</span>client<span class="token punctuation">,</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        thread<span class="token punctuation">.</span>start<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div><ul><li>So you might be confused whats all happening here. So basically what we are doing is that whenever client requests to connect, the server accepts the client. Then a <strong>NICK</strong> named code is sent by the server(<strong>Note: We are encoding and decoding all the messages into ascii</strong>) and client then sends its nickname which gets saved in the memory. Client is added to the clients list as well. Finally a message is broadcasted by the server indicating the presence of the client. As we want to handle each client separately who connects to the server, we start a thread with <code>target=handle</code> and <code>args=client</code>.</li></ul> <div class="language-py extra-class"><pre class="language-py"><code><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Initialising Server......'</span><span class="token punctuation">)</span>
+receive<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div><ul><li><p>At the end we send a nice looking console message so that we are not having any errors and ensuring that our sever is up. Also we run the recieve function to start looking for clients.</p></li> <li><p>Full code of the client is given below.</p></li></ul> <div class="language-py extra-class"><pre class="language-py"><code><span class="token keyword">import</span> threading
+<span class="token keyword">import</span> socket
+
+host <span class="token operator">=</span> <span class="token string">'192.168.0.45'</span>
+port <span class="token operator">=</span> <span class="token number">55555</span>
+
+server <span class="token operator">=</span> socket<span class="token punctuation">.</span>socket<span class="token punctuation">(</span>socket<span class="token punctuation">.</span>AF_INET<span class="token punctuation">,</span> socket<span class="token punctuation">.</span>SOCK_STREAM<span class="token punctuation">)</span>
+server<span class="token punctuation">.</span>bind<span class="token punctuation">(</span><span class="token punctuation">(</span>host<span class="token punctuation">,</span> port<span class="token punctuation">)</span><span class="token punctuation">)</span>
+server<span class="token punctuation">.</span>listen<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+clients<span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+nicknames<span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+
+<span class="token keyword">def</span> <span class="token function">broadcast</span><span class="token punctuation">(</span>msg<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">for</span> client <span class="token keyword">in</span> clients<span class="token punctuation">:</span>
+        client<span class="token punctuation">.</span>send<span class="token punctuation">(</span>msg<span class="token punctuation">)</span>
+
+<span class="token keyword">def</span> <span class="token function">handle</span><span class="token punctuation">(</span>client<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+        <span class="token keyword">try</span><span class="token punctuation">:</span>
+            message <span class="token operator">=</span> client<span class="token punctuation">.</span>recv<span class="token punctuation">(</span><span class="token number">1024</span><span class="token punctuation">)</span>
+            broadcast<span class="token punctuation">(</span>message<span class="token punctuation">)</span>
+        <span class="token keyword">except</span><span class="token punctuation">:</span>
+            index <span class="token operator">=</span> clients<span class="token punctuation">.</span>index<span class="token punctuation">(</span>client<span class="token punctuation">)</span>
+            clients<span class="token punctuation">.</span>remove<span class="token punctuation">(</span>client<span class="token punctuation">)</span>
+            client<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+            nickname <span class="token operator">=</span> nicknames<span class="token punctuation">[</span>index<span class="token punctuation">]</span>
+            broadcast<span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f'</span><span class="token interpolation"><span class="token punctuation">{</span>nickname<span class="token punctuation">}</span></span><span class="token string"> left the chat'</span></span><span class="token punctuation">.</span>encode<span class="token punctuation">(</span><span class="token string">'ascii'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+            nicknames<span class="token punctuation">.</span>remove<span class="token punctuation">(</span>nickname<span class="token punctuation">)</span>
+            <span class="token keyword">break</span>
+
+<span class="token keyword">def</span> <span class="token function">receive</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+        client<span class="token punctuation">,</span> address <span class="token operator">=</span> server<span class="token punctuation">.</span>accept<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f'Connected with </span><span class="token interpolation"><span class="token punctuation">{</span><span class="token builtin">str</span><span class="token punctuation">(</span>address<span class="token punctuation">)</span><span class="token punctuation">}</span></span><span class="token string">'</span></span><span class="token punctuation">)</span>
+
+        client<span class="token punctuation">.</span>send<span class="token punctuation">(</span><span class="token string">'NICK'</span><span class="token punctuation">.</span>encode<span class="token punctuation">(</span><span class="token string">'ascii'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        nickname <span class="token operator">=</span> client<span class="token punctuation">.</span>recv<span class="token punctuation">(</span><span class="token number">1024</span><span class="token punctuation">)</span><span class="token punctuation">.</span>decode<span class="token punctuation">(</span><span class="token string">'ascii'</span><span class="token punctuation">)</span>
+        nicknames<span class="token punctuation">.</span>append<span class="token punctuation">(</span>nickname<span class="token punctuation">)</span>
+        clients<span class="token punctuation">.</span>append<span class="token punctuation">(</span>client<span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f'Nickname of the client is: </span><span class="token interpolation"><span class="token punctuation">{</span>nickname<span class="token punctuation">}</span></span><span class="token string">!'</span></span><span class="token punctuation">)</span>
+        broadcast<span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f'</span><span class="token interpolation"><span class="token punctuation">{</span>nickname<span class="token punctuation">}</span></span><span class="token string"> joined the chat'</span></span><span class="token punctuation">.</span>encode<span class="token punctuation">(</span><span class="token string">'ascii'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        client<span class="token punctuation">.</span>send<span class="token punctuation">(</span><span class="token string">'Connected to the server'</span><span class="token punctuation">.</span>encode<span class="token punctuation">(</span><span class="token string">'ascii'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+        thread <span class="token operator">=</span> threading<span class="token punctuation">.</span>Thread<span class="token punctuation">(</span>target<span class="token operator">=</span>handle<span class="token punctuation">,</span> args<span class="token operator">=</span><span class="token punctuation">(</span>client<span class="token punctuation">,</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        thread<span class="token punctuation">.</span>start<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Initialising Server......'</span><span class="token punctuation">)</span>
+receive<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div><h2 id="coding-the-client"><a href="#coding-the-client" class="header-anchor">#</a> Coding the Client</h2> <ul><li>Client is also almost same as our server. Lets see how to code it.</li> <li>First we do the same as we did in the server with one more thing this time i.e. asking for nickname input.</li></ul> <div class="language-py extra-class"><pre class="language-py"><code><span class="token keyword">import</span> threading
+<span class="token keyword">import</span> socket
+
+nickname <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">'Enter a valid nickname '</span><span class="token punctuation">)</span>
+
+client <span class="token operator">=</span> socket<span class="token punctuation">.</span>socket<span class="token punctuation">(</span>socket<span class="token punctuation">.</span>AF_INET<span class="token punctuation">,</span> socket<span class="token punctuation">.</span>SOCK_STREAM<span class="token punctuation">)</span>
+
+host <span class="token operator">=</span> <span class="token string">'192.168.0.45'</span>
+port <span class="token operator">=</span> <span class="token number">55555</span>
+
+client<span class="token punctuation">.</span>connect<span class="token punctuation">(</span><span class="token punctuation">(</span>host<span class="token punctuation">,</span> port<span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre></div><ul><li>Client only requires two simple functions. Lets see the first function called recieve.</li></ul> <div class="language-py extra-class"><pre class="language-py"><code><span class="token keyword">def</span> <span class="token function">recieve</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+        <span class="token keyword">try</span><span class="token punctuation">:</span>
+            msg <span class="token operator">=</span> client<span class="token punctuation">.</span>recv<span class="token punctuation">(</span><span class="token number">1024</span><span class="token punctuation">)</span><span class="token punctuation">.</span>decode<span class="token punctuation">(</span><span class="token string">'ascii'</span><span class="token punctuation">)</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>msg<span class="token operator">==</span><span class="token string">'NICK'</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+                client<span class="token punctuation">.</span>send<span class="token punctuation">(</span>nickname<span class="token punctuation">.</span>encode<span class="token punctuation">(</span><span class="token string">'ascii'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+            <span class="token keyword">else</span><span class="token punctuation">:</span>
+                <span class="token keyword">print</span><span class="token punctuation">(</span>msg<span class="token punctuation">)</span>
+        <span class="token keyword">except</span><span class="token punctuation">:</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Unexpected Error! Connection Closed....'</span><span class="token punctuation">)</span>
+            client<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token keyword">break</span>
+</code></pre></div><ul><li>Here we recieve the message sent by the server. Remember we sent a code from our server called NICK asking for the nickname. We check for the same and send if the code is sent by the server. Else we print the message itself. Also we have a error function which closes the client if server disconnects.</li></ul> <div class="language-py extra-class"><pre class="language-py"><code><span class="token keyword">def</span> <span class="token function">write</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+        message <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">&quot;&quot;</span><span class="token punctuation">)</span>
+        msg <span class="token operator">=</span> <span class="token string-interpolation"><span class="token string">f'</span><span class="token interpolation"><span class="token punctuation">{</span>nickname<span class="token punctuation">}</span></span><span class="token string">: </span><span class="token interpolation"><span class="token punctuation">{</span>message<span class="token punctuation">}</span></span><span class="token string">'</span></span>
+        client<span class="token punctuation">.</span>send<span class="token punctuation">(</span>msg<span class="token punctuation">.</span>encode<span class="token punctuation">(</span><span class="token string">'ascii'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre></div><ul><li>Second function is write function which just takes the input from the user, encodes it to ascii and send it back to the server.</li> <li>Last thing to do is to setup our threads for these two functions.</li></ul> <div class="language-py extra-class"><pre class="language-py"><code>recieve_thread <span class="token operator">=</span> threading<span class="token punctuation">.</span>Thread<span class="token punctuation">(</span>target<span class="token operator">=</span>recieve<span class="token punctuation">)</span>
+recieve_thread<span class="token punctuation">.</span>start<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+write_thread <span class="token operator">=</span> threading<span class="token punctuation">.</span>Thread<span class="token punctuation">(</span>target<span class="token operator">=</span>write<span class="token punctuation">)</span>
+write_thread<span class="token punctuation">.</span>start<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div><ul><li>So our full client code is given below.</li></ul> <div class="language-py extra-class"><pre class="language-py"><code><span class="token keyword">import</span> threading
+<span class="token keyword">import</span> socket
+
+nickname <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">'Enter a valid nickname '</span><span class="token punctuation">)</span>
+
+client <span class="token operator">=</span> socket<span class="token punctuation">.</span>socket<span class="token punctuation">(</span>socket<span class="token punctuation">.</span>AF_INET<span class="token punctuation">,</span> socket<span class="token punctuation">.</span>SOCK_STREAM<span class="token punctuation">)</span>
+
+host <span class="token operator">=</span> <span class="token string">'192.168.0.45'</span>
+port <span class="token operator">=</span> <span class="token number">55555</span>
+
+client<span class="token punctuation">.</span>connect<span class="token punctuation">(</span><span class="token punctuation">(</span>host<span class="token punctuation">,</span> port<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">recieve</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+        <span class="token keyword">try</span><span class="token punctuation">:</span>
+            msg <span class="token operator">=</span> client<span class="token punctuation">.</span>recv<span class="token punctuation">(</span><span class="token number">1024</span><span class="token punctuation">)</span><span class="token punctuation">.</span>decode<span class="token punctuation">(</span><span class="token string">'ascii'</span><span class="token punctuation">)</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>msg<span class="token operator">==</span><span class="token string">'NICK'</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+                client<span class="token punctuation">.</span>send<span class="token punctuation">(</span>nickname<span class="token punctuation">.</span>encode<span class="token punctuation">(</span><span class="token string">'ascii'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+            <span class="token keyword">else</span><span class="token punctuation">:</span>
+                <span class="token keyword">print</span><span class="token punctuation">(</span>msg<span class="token punctuation">)</span>
+        <span class="token keyword">except</span><span class="token punctuation">:</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Unexpected Error! Connection Closed....'</span><span class="token punctuation">)</span>
+            client<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token keyword">break</span>
+<span class="token keyword">def</span> <span class="token function">write</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+        message <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">&quot;&quot;</span><span class="token punctuation">)</span>
+        msg <span class="token operator">=</span> <span class="token string-interpolation"><span class="token string">f'</span><span class="token interpolation"><span class="token punctuation">{</span>nickname<span class="token punctuation">}</span></span><span class="token string">: </span><span class="token interpolation"><span class="token punctuation">{</span>message<span class="token punctuation">}</span></span><span class="token string">'</span></span>
+        client<span class="token punctuation">.</span>send<span class="token punctuation">(</span>msg<span class="token punctuation">.</span>encode<span class="token punctuation">(</span><span class="token string">'ascii'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment"># Threads</span>
+recieve_thread <span class="token operator">=</span> threading<span class="token punctuation">.</span>Thread<span class="token punctuation">(</span>target<span class="token operator">=</span>recieve<span class="token punctuation">)</span>
+recieve_thread<span class="token punctuation">.</span>start<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+write_thread <span class="token operator">=</span> threading<span class="token punctuation">.</span>Thread<span class="token punctuation">(</span>target<span class="token operator">=</span>write<span class="token punctuation">)</span>
+write_thread<span class="token punctuation">.</span>start<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div><h2 id="how-does-it-work"><a href="#how-does-it-work" class="header-anchor">#</a> How does it work?</h2> <p>So thats it! Our application is complete by now but how does it work?? Well it used websockets to establish a connection between the server and the client. A WebSocket is a persistent connection between a client and server. WebSockets provide a bidirectional, full-duplex communications channel that operates over HTTP through a single TCP/IP socket connection. At its core, the WebSocket protocol facilitates message passing between a client and server.</p> <h2 id="conclusion-and-further-learning"><a href="#conclusion-and-further-learning" class="header-anchor">#</a> Conclusion and further learning</h2> <p>I hope you liked building this project with me. Stay tuned for the second part in which we are going to implement the help command for user to interact with and some admin role and commands too 😃</p></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">8/15/2021, 10:06:09 AM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/blog/intro-to-vuepress.html" class="prev">
+        Getting Started with vuepress
+      </a></span> <span class="next"><a href="/blog/tryhackme-pre-security.html">
+        Lucky Titles - Tryhackme Pre Security Path
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----><!----></div></div>
+    <script src="/assets/js/app.99a4af3f.js" defer></script><script src="/assets/js/2.03360062.js" defer></script><script src="/assets/js/9.bff3b7b4.js" defer></script>
+  </body>
+</html>
